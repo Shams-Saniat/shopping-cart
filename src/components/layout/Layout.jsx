@@ -1,13 +1,13 @@
 import MyNavigation from "./MyNavigation";
 
-function Layout() {
+function Layout(props) {
   return (
     <div>
       {/* Navbar */}
       <MyNavigation />
 
       {/* Main */}
-
+      <main>{props.children}</main>
       {/* Footer */}
       <footer className="footer sm:footer-horizontal bg-base-300 text-base-content p-10">
         <nav>
