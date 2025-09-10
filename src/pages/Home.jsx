@@ -1,9 +1,9 @@
-import Slider from "../components/ui/Slider";
+import Hero from "../components/ui/Hero";
 
 function Home(){
     return (
         <div>
-            <Slider />
+            <Hero />
         </div>
     )
 }
