@@ -1,0 +1,41 @@
+import { useRef } from "react";
+
+
+function NewItemForm() {
+    const titleInputRef = useRef();
+    const ImageInputRef = useRef();
+    const PriceInputRef = useRef();
+
+    function submitHandler(event) {
+        event.preventDefault();
+
+        const enteredTitle = titleInputRef.current.value;
+        const enteredImage = imageInputRef.current.value;
+        const enteredPrice = priceInputRef.current.value;
+
+        const productData = {
+            title: enteredTitle,
+            image: enteredImage,
+            price: enteredPrice,
+        };
+    }
+
+    return <form onSubmit={submitHandler}>
+        <div>
+            <label htmlFor="title">Item Title</label>
+            <input type="text" placeholder="neutral" className="input input-neutral" ref={titleInputRef} />
+        </div>
+        <div>
+            <label htmlFor="image">Item Image</label>
+            <input type="url" placeholder="neutral" className="input input-neutral" ref={ImageInputRef} />
+        </div>
+        <div>
+            <label htmlFor="price">Item Price</label>
+            <input type="text" placeholder="neutral" className="input input-neutral" ref={PriceInputRef} />
+        </div>
+        <div>
+           <button className="btn btn-success">Add Item</button> 
+        </div>
+    </form>
+}
+export default NewItemForm;

@@ -1,4 +1,4 @@
-function ProductSlider() {
+function ProductItem() {
   return (
     <div className="bg-green-500 p-6">
       <div className="carousel carousel-center space-x-4 rounded-box">
@@ -82,4 +82,4 @@ function ProductSlider() {
   );
 }
 
-export default ProductSlider;
+export default ProductItem;

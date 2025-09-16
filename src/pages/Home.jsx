@@ -1,11 +1,13 @@
 import Hero from "../components/ui/Hero";
-import ProductSlider from "../components/ui/ProductSlider";
+import ProductItem from "../components/shop/ProductItem";
+import ProductList from "../components/shop/ProductList";
 
 function Home(){
     return (
         <div>
             <Hero />
-            <ProductSlider />
+            <ProductList products={DUMMY_DATA} />
+            {/* <ProductItem /> */}
         </div>
     )
 }
