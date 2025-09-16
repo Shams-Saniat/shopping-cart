@@ -29,6 +29,22 @@ function MainNavigation() {
               className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
             ></div>
           </div>
+          {/* Add Icon */}
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle"
+            >
+              <div className="indicator">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+            <div
+              tabIndex={0}
+              className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
+            ></div>
+          </div>
           {/* Heart Icon */}
           <div className="dropdown dropdown-end">
             <div

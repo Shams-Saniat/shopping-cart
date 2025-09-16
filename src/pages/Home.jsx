@@ -6,7 +6,7 @@ function Home(){
     return (
         <div>
             <Hero />
-            <ProductList products={DUMMY_DATA} />
+            {/* <ProductList products={DUMMY_DATA} /> */}
             {/* <ProductItem /> */}
         </div>
     )

@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 
-function NewItemForm() {
+function NewItemForm(props) {
     const titleInputRef = useRef();
     const ImageInputRef = useRef();
     const PriceInputRef = useRef();
@@ -18,6 +18,8 @@ function NewItemForm() {
             image: enteredImage,
             price: enteredPrice,
         };
+
+        props.onAddItem(productData)
     }
 
     return <form onSubmit={submitHandler}>
