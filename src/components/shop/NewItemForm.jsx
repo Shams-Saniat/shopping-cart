@@ -3,8 +3,8 @@ import { useRef } from "react";
 
 function NewItemForm(props) {
     const titleInputRef = useRef();
-    const ImageInputRef = useRef();
-    const PriceInputRef = useRef();
+    const imageInputRef = useRef();
+    const priceInputRef = useRef();
 
     function submitHandler(event) {
         event.preventDefault();
@@ -29,11 +29,11 @@ function NewItemForm(props) {
         </div>
         <div>
             <label htmlFor="image">Item Image</label>
-            <input type="url" placeholder="neutral" className="input input-neutral" ref={ImageInputRef} />
+            <input type="url" placeholder="neutral" className="input input-neutral" ref={imageInputRef} />
         </div>
         <div>
             <label htmlFor="price">Item Price</label>
-            <input type="text" placeholder="neutral" className="input input-neutral" ref={PriceInputRef} />
+            <input type="text" placeholder="neutral" className="input input-neutral" ref={priceInputRef} />
         </div>
         <div>
            <button className="btn btn-success">Add Item</button> 

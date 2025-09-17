@@ -5,7 +5,7 @@ function NewItem(){
     const navigate = useNavigate();
 
     function addItemHandler(productData) {
-        fetch('https://react-shopping-cart-20027-default-rtdb.firebaseio.com/products.json',
+        fetch('https://react-shopping-cart-20027-default-rtdb.firebaseio.com/products.json', 
             {
                 method: 'POST',
                 body: JSON.stringify(productData),
