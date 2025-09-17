@@ -21,7 +21,7 @@ function MainNavigation() {
               className="btn btn-ghost btn-circle"
             >
               <div className="indicator">
-                <i class="fa-solid fa-user"></i>
+                <i className="fa-solid fa-user"></i>
               </div>
             </div>
             <div
@@ -37,7 +37,7 @@ function MainNavigation() {
               className="btn btn-ghost btn-circle"
             >
               <div className="indicator">
-                <i class="fa-solid fa-plus"></i>
+                <i className="fa-solid fa-plus"></i>
               </div>
             </div>
             <div
@@ -53,7 +53,7 @@ function MainNavigation() {
               className="btn btn-ghost btn-circle"
             >
               <div className="indicator">
-                <i class="fa-solid fa-heart"></i>
+                <i className="fa-solid fa-heart"></i>
                 <span className="badge badge-sm indicator-item">8</span>
               </div>
             </div>
@@ -70,7 +70,7 @@ function MainNavigation() {
               className="btn btn-ghost btn-circle"
             >
               <div className="indicator">
-                <i class="fa-solid fa-bag-shopping"></i>
+                <i className="fa-solid fa-bag-shopping"></i>
               </div>
             </div>
             <div
