@@ -1,43 +1,71 @@
 import { useRef } from "react";
 
-
 function NewItemForm(props) {
-    const titleInputRef = useRef();
-    const imageInputRef = useRef();
-    const priceInputRef = useRef();
+  const titleInputRef = useRef();
+  const imageInputRef = useRef();
+  const priceInputRef = useRef();
 
-    function submitHandler(event) {
-        event.preventDefault();
+  function submitHandler(event) {
+    event.preventDefault();
 
-        const enteredTitle = titleInputRef.current.value;
-        const enteredImage = imageInputRef.current.value;
-        const enteredPrice = priceInputRef.current.value;
+    const enteredTitle = titleInputRef.current.value;
+    const enteredImage = imageInputRef.current.value;
+    const enteredPrice = priceInputRef.current.value;
 
-        const productData = {
-            title: enteredTitle,
-            image: enteredImage,
-            price: enteredPrice,
-        };
+    const productData = {
+      title: enteredTitle,
+      image: enteredImage,
+      price: enteredPrice,
+    };
 
-        props.onAddItem(productData)
-    }
+    props.onAddItem(productData);
+  }
 
-    return <form onSubmit={submitHandler}>
-        <div>
-            <label htmlFor="title">Item Title</label>
-            <input type="text" placeholder="neutral" className="input input-neutral" ref={titleInputRef} />
+  return (
+    <div className="flex justify-center mt-10">
+      <form
+        onSubmit={submitHandler}
+        className="card w-full max-w-md bg-base-200 shadow-xl p-6 space-y-4"
+      >
+        <h2 className="text-xl font-bold text-center">Add New Product</h2>
+
+        {/* Title */}
+        <div className="form-control">
+          <input
+            type="text"
+            placeholder="Enter product title"
+            className="input input-bordered"
+            ref={titleInputRef}
+          />
         </div>
-        <div>
-            <label htmlFor="image">Item Image</label>
-            <input type="url" placeholder="neutral" className="input input-neutral" ref={imageInputRef} />
+
+        {/* Image */}
+        <div className="form-control">
+          <input
+            type="url"
+            placeholder="Enter image URL"
+            className="input input-bordered"
+            ref={imageInputRef}
+          />
         </div>
-        <div>
-            <label htmlFor="price">Item Price</label>
-            <input type="text" placeholder="neutral" className="input input-neutral" ref={priceInputRef} />
+
+        {/* Price */}
+        <div className="form-control">
+          <input
+            type="number"
+            placeholder="Enter product price"
+            className="input input-bordered"
+            ref={priceInputRef}
+          />
         </div>
-        <div>
-           <button className="btn btn-success">Add Item</button> 
+
+        {/* Button */}
+        <div className="form-control mt-4">
+          <button className="btn btn-success w-full">Add Item</button>
         </div>
-    </form>
+      </form>
+    </div>
+  );
 }
+
 export default NewItemForm;
