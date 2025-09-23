@@ -11,6 +11,7 @@ function ProductList(props) {
             image={product.image}
             title={product.title}
             price={product.price}
+            onAddToCart={props.onAddToCart}
           />
         ))}
       </div>

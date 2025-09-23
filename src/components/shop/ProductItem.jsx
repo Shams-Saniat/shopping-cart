@@ -1,4 +1,4 @@
-function ProductItem({ image, title, price }) {
+function ProductItem({ id, image, title, price, onAddToCart }) {
   return (
     <div className="carousel-item">
       <div className="card w-60 bg-base-100 shadow-md">
@@ -13,7 +13,12 @@ function ProductItem({ image, title, price }) {
           <h2 className="card-title text-sm">{title}</h2>
           <p className="text-xs">£{price}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-neutral">Buy Now</button>
+            <button
+              className="btn btn-neutral"
+              onClick={() => onAddToCart({ id, title, image, price })}
+            >
+              Buy Now
+            </button>
           </div>
         </div>
       </div>

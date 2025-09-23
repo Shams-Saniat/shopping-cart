@@ -2,7 +2,7 @@ import Hero from "../components/ui/Hero";
 import ProductList from "../components/shop/ProductList";
 import { useEffect, useState } from "react";
 
-function Home() {
+function Home(props) {
     const [isLoading, setIsLoading] = useState(true);
     const [loadedMeetups, setLoadedMeetups] = useState([]);
 
@@ -36,7 +36,10 @@ function Home() {
     return (
         <div>
             <Hero />
-            <ProductList products={loadedMeetups} />
+            <ProductList
+                products={loadedMeetups}
+                onAddToCart={props.onAddToCart}
+            />
         </div>
     );
 }
