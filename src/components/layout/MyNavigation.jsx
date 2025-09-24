@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 
-function MainNavigation() {
+function MainNavigation({cartCount}) {
   return (
     // Navbar
     <div>
@@ -57,8 +57,7 @@ function MainNavigation() {
           <Link to="/cart" className="btn btn-ghost btn-circle">
             <div className="indicator">
               <i className="fa-solid fa-bag-shopping"></i>
-              {/* ekhane count add kora jabe */}
-              {/* <span className="badge badge-sm indicator-item">{cartCount}</span> */}
+              {cartCount}
             </div>
           </Link>
         </div>

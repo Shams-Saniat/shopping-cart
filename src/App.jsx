@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <Layout>
+    <Layout cartCount={cartItems.length}>
       <Routes>
         <Route
           path="/"

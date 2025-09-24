@@ -4,7 +4,7 @@ function Layout(props) {
   return (
     <div>
       {/* Navbar */}
-      <MyNavigation />
+      <MyNavigation cartCount={props.cartCount} />
 
       {/* Main */}
       <main>{props.children}</main>

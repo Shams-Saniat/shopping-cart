@@ -3,7 +3,7 @@ import ProductList from "../components/shop/ProductList";
 import { useEffect, useState } from "react";
 
 function Home(props) {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [loadedMeetups, setLoadedMeetups] = useState([]);
 
     useEffect(() => {
