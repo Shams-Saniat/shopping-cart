@@ -20,6 +20,7 @@ function Cart({ cartItems, onRemove }) {
                             </figure>
                             <h3>{item.title}</h3>
                             <p>${item.price}</p>
+                            <p>Quantity: {item.quantity}</p>
                         </div>
                         <button
                             onClick={() => onRemove(item.id)}
