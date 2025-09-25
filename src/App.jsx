@@ -8,19 +8,44 @@ import { useState } from "react";
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
+  // function addToCart(product) {
+  //   setCartItems((prevItems) => {
+  //     const existingItem = prevItems.find((item) => item.id === product.id);
+  //     if (existingItem) {
+  //       return prevItems.map((item) =>
+  //         item.id === product.id
+  //           ? { ...item, quantity: item.quantity + 1 }
+  //           : item
+  //       );
+  //     }
+  //     return [...prevItems, { ...product, quantity: 1 }];
+  //   });
+  // }
+
   function addToCart(product) {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.id === product.id);
-      if (existingItem) {
+  setCartItems((prevItems) => {
+    const existingItem = prevItems.find((item) => item.id === product.id);
+
+    if (existingItem) {
+      // ✅ check stock before incrementing
+      if (existingItem.quantity < product.stock) {
         return prevItems.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
+      } else {
+        // already at max stock
+        alert(`Sorry, only ${product.stock} in stock!`);
+        return prevItems;
       }
-      return [...prevItems, { ...product, quantity: 1 }];
-    });
-  }
+    }
+
+    // First time adding → start with 1
+    return [...prevItems, { ...product, quantity: 1 }];
+  });
+}
+
 
   function removeFromCart(id) {
     setCartItems(

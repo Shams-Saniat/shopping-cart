@@ -12,11 +12,11 @@ function ProductItem({ id, image, title, price, stock, onAddToCart }) {
         <div className="card-body p-4">
           <h2 className="card-title text-sm">{title}</h2>
           <p className="text-xs">£{price}</p>
-          <p className="text-xs">{stock}</p>
+          <p className="text-xs">Available: {stock} pieces</p>
           <div className="card-actions justify-end">
             <button
               className="btn btn-neutral"
-              onClick={() => onAddToCart({ id, title, image, price })}
+              onClick={() => onAddToCart({ id, title, image, price, stock })}
             >
               Buy Now
             </button>

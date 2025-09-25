@@ -33,6 +33,7 @@ function Cart({ cartItems, onRemove, onAdd }) {
               <button
                 onClick={() => onAdd(item)}
                 className="btn btn-sm btn-success"
+                disabled={item.quantity >= item.stock} // stop at stock
               >
                 +
               </button>
