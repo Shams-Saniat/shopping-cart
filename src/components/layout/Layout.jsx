@@ -2,12 +2,14 @@ import MyNavigation from "./MyNavigation";
 
 function Layout(props) {
   return (
-    <div>
+    <div className="h-screen w-screen overflow-hidden flex items-center flex-col">
       {/* Navbar */}
       <MyNavigation cartCount={props.cartCount} />
 
       {/* Main */}
-      <main>{props.children}</main>
+      <main className="w-full">{props.children}</main>
+
+      <div className="flex-1"></div>
 
       {/* Footer */}
       <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">

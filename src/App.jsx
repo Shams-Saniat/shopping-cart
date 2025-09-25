@@ -22,14 +22,6 @@ function App() {
     });
   }
 
-
-
-  // function removeFromCart(id) {
-  //   setCartItems((prevItems) =>
-  //     prevItems.filter((item) => item.id !== id)
-  //   );
-  // }
-
   function removeFromCart(id) {
     setCartItems((prevItems) =>
       prevItems
