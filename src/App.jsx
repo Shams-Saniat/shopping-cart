@@ -24,11 +24,22 @@ function App() {
 
 
 
+  // function removeFromCart(id) {
+  //   setCartItems((prevItems) =>
+  //     prevItems.filter((item) => item.id !== id)
+  //   );
+  // }
+
   function removeFromCart(id) {
     setCartItems((prevItems) =>
-      prevItems.filter((item) => item.id !== id)
+      prevItems
+        .map((item) =>
+          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter((item) => item.quantity > 0) // remove only when quantity hits 0
     );
   }
+
 
   return (
     <Layout cartCount={cartItems.length}>
