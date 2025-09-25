@@ -23,26 +23,24 @@ function App() {
   }
 
   function removeFromCart(id) {
-    setCartItems((prevItems) =>
-      prevItems
-        .map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-        )
-        .filter((item) => item.quantity > 0) // remove only when quantity hits 0
+    setCartItems(
+      (prevItems) =>
+        prevItems
+          .map((item) =>
+            item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+          )
+          .filter((item) => item.quantity > 0)
     );
   }
-
 
   return (
     <Layout cartCount={cartItems.length}>
       <Routes>
-        <Route
-          path="/"
-          element={<Home onAddToCart={addToCart} />} />
+        <Route path="/" element={<Home onAddToCart={addToCart} />} />
         <Route path="/new-item" element={<NewItem />} />
         <Route
           path="/cart"
-          element={<Cart cartItems={cartItems} onRemove={removeFromCart} />}
+          element={<Cart cartItems={cartItems} onRemove={removeFromCart} onAdd={addToCart} />}
         />
       </Routes>
     </Layout>

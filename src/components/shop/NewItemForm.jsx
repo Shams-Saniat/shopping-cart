@@ -4,6 +4,7 @@ function NewItemForm(props) {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const priceInputRef = useRef();
+  const stockInputRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault();
@@ -11,11 +12,13 @@ function NewItemForm(props) {
     const enteredTitle = titleInputRef.current.value;
     const enteredImage = imageInputRef.current.value;
     const enteredPrice = priceInputRef.current.value;
+    const enteredStock = stockInputRef.current.value;
 
     const productData = {
       title: enteredTitle,
       image: enteredImage,
       price: enteredPrice,
+      stock: enteredStock,
     };
 
     props.onAddItem(productData);
@@ -56,6 +59,16 @@ function NewItemForm(props) {
             placeholder="Enter product price"
             className="input input-bordered"
             ref={priceInputRef}
+          />
+        </div>
+
+        {/* Stocks */}
+        <div className="form-control">
+          <input
+            type="number"
+            placeholder="Enter product stocks"
+            className="input input-bordered"
+            ref={stockInputRef}
           />
         </div>
 
