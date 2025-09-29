@@ -23,7 +23,7 @@ function App() {
         );
       } else {
         // already at max stock
-        console.log(`Sorry, only ${product.stock} in stock!`)
+        alert(`Sorry, only ${product.stock} in stock!`);
         return prevItems;
       }
     }

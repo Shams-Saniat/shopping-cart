@@ -5,6 +5,7 @@ function NewItemForm(props) {
   const imageInputRef = useRef();
   const priceInputRef = useRef();
   const stockInputRef = useRef();
+  const categoryInputRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault();
@@ -13,12 +14,14 @@ function NewItemForm(props) {
     const enteredImage = imageInputRef.current.value;
     const enteredPrice = priceInputRef.current.value;
     const enteredStock = stockInputRef.current.value;
+    const enteredCategory = categoryInputRef.current.value;
 
     const productData = {
       title: enteredTitle,
       image: enteredImage,
       price: enteredPrice,
       stock: enteredStock,
+      category: enteredCategory,
     };
 
     props.onAddItem(productData);
@@ -32,7 +35,17 @@ function NewItemForm(props) {
       >
         <h2 className="text-xl font-bold text-center">Add New Product</h2>
 
-        
+        {/* Category */}
+        <div className="form-control">
+          <span className="label-text">Category</span>
+          <select name="category" className="select select-bordered select-sm" ref={categoryInputRef} required>
+            <option value="">-- Select Category --</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Electronics">Electronics</option>
+          </select>
+        </div>
 
         {/* Title */}
         <div className="form-control">
