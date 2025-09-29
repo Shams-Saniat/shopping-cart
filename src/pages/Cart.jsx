@@ -25,14 +25,14 @@ function Cart({ cartItems, onRemove, onAdd }) {
             <div className="flex gap-2 mt-2 justify-around items-center">
               <button
                 onClick={() => onRemove(item.id)}
-                className="btn btn-sm btn-error"
+                className="btn btn-sm btn-outline"
               >
                 -
               </button>
               <p>{item.quantity}</p>
               <button
                 onClick={() => onAdd(item)}
-                className="btn btn-sm btn-success"
+                className="btn btn-sm btn-neutral"
                 disabled={item.quantity >= item.stock} // stop at stock
               >
                 +

@@ -32,6 +32,8 @@ function NewItemForm(props) {
       >
         <h2 className="text-xl font-bold text-center">Add New Product</h2>
 
+        
+
         {/* Title */}
         <div className="form-control">
           <input

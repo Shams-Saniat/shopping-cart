@@ -1,9 +1,9 @@
 import ProductItem from "./ProductItem";
 
-function ProductList(props) {
+function ProductSlider(props) {
   return (
-    <div className="mx-20">
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 p-6">
+    <div className="bg-green-500 p-6">
+      <div className="carousel carousel-center space-x-4 rounded-box">
         {props.products.map((product) => (
           <ProductItem
             key={product.id}
@@ -18,8 +18,8 @@ function ProductList(props) {
           />
         ))}
       </div>
-      </div>
+    </div>
   );
 }
 
-export default ProductList;
+export default ProductSlider;
