@@ -2,7 +2,7 @@ import MyNavigation from "./MyNavigation";
 
 function Layout(props) {
   return (
-    <div className="h-screen w-screen overflow-hidden flex items-center flex-col">
+    <div className="h-screen w-screen overflow-x-hidden flex items-center flex-col">
       {/* Navbar */}
       <MyNavigation cartCount={props.cartCount} />
 

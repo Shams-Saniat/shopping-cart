@@ -1,10 +1,11 @@
-import Hero from "../components/ui/Hero";
+import ClothingHero from "../components/ui/ClothingHero";
 import ProductSlider from "../components/shop/ProductSlider";
 import { useEffect, useState } from "react";
+import ShoesHero from "../components/ui/ShoesHero";
 
 function Home(props) {
   const [isLoading, setIsLoading] = useState(false);
-  const [loadedMeetups, setLoadedMeetups] = useState([]);
+  const [loadedProducts, setloadedProducts] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -23,7 +24,7 @@ function Home(props) {
         }
 
         setIsLoading(false);
-        setLoadedMeetups(products);
+        setloadedProducts(products);
       });
   }, []);
 
@@ -35,14 +36,29 @@ function Home(props) {
     );
   }
 
+  // category variables
+  const clothingProducts = loadedProducts.filter(
+    (p) => p.category === "Clothing"
+  );
+  const shoesProducts = loadedProducts.filter((p) => p.category === "Shoes");
+
   return (
     <div>
-      <Hero />
+      <ClothingHero />
       <ProductSlider
-        products={loadedMeetups}
+        category="Clothing"
+        products={clothingProducts}
         cartItems={props.cartItems}
         onAddToCart={props.onAddToCart}
-        onRemoveFromCart={props.onRemoveFromCart}       
+        onRemoveFromCart={props.onRemoveFromCart}
+      />
+      <ShoesHero />
+      <ProductSlider
+        category="Shoes"
+        products={shoesProducts}
+        cartItems={props.cartItems}
+        onAddToCart={props.onAddToCart}
+        onRemoveFromCart={props.onRemoveFromCart}
       />
     </div>
   );
